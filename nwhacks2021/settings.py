@@ -10,6 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+import os
+
+import django_heroku
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,12 +24,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'pc+l8typ^ng&z52n@kpr$g+sd0ajste^^pycq076az=fh8i%bl'
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "smartgradetracker.herokuapp.com",
+]
 
 
 # Application definition
@@ -118,4 +126,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+if (os.environ.get("DJANGO_DEBUG_VALUE") != "True") and (
+    os.environ.get("DJANGO_DEBUG_VALUE") is not None
+):
+    STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = '/static/'
+
+if (os.environ.get("DJANGO_DEBUG_VALUE") != "True") and (
+    os.environ.get("DJANGO_DEBUG_VALUE") is not None
+):
+    django_heroku.settings(locals())
