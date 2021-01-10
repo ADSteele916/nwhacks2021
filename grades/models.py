@@ -39,7 +39,7 @@ class Bin(models.Model):
             weighted_marks.pop(idx)
             weighted_assignments.pop(idx)
 
-        return sum(list(map(lambda x: x[0] * x[1], weighted_assignments))) / sum(list(map(lambda x: x[0], weighted_assignments)))
+        return sum(list(map(lambda x: x[1], weighted_assignments))) / sum(list(map(lambda x: x[0], weighted_assignments)))
 
 
 class Assessment(models.Model):
