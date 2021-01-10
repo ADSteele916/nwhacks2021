@@ -375,7 +375,7 @@ a:hover {
 }
 
 .delete-button {
-    padding: 5px 50px;
+    padding: 5px 20px;
     font-family: 'Roboto Mono', monospace;
     border-color: #A8D0E6;
     border-width: 3px;
@@ -398,6 +398,35 @@ a:hover {
 }
 
 .delete-button:focus {
+    border-color: #F76C6C;
+    background-color: #A8D0E6;
+    color: #F76C6C;
+}
+
+.new-button {
+    padding: 5px 50px;
+    font-family: 'Roboto Mono', monospace;
+    border-color: #A8D0E6;
+    border-width: 3px;
+    border-style: solid;
+    color: #A8D0E6;
+    background-color: white;
+}
+
+.new-button:hover {
+    border-color: #A8D0E6;
+    background-color: #A8D0E6;
+    border-width: 3px;
+    color: #F76C6C;
+}
+
+.new-button:active {
+    border-color: #F76C6C;
+    background-color: #A8D0E6;
+    color: #F76C6C;
+}
+
+.new-button:focus {
     border-color: #F76C6C;
     background-color: #A8D0E6;
     color: #F76C6C;

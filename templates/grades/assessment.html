@@ -10,7 +10,7 @@
         {% endfor %}
     {% endif %}
     <div class="extrawrapper1 text-center">
-        <a class="new-assessment delete-button" href="{% url 'grades-new-assessment' course_id bin_id %}">New Assessment</a>
+        <a class="new-assessment new-button" href="{% url 'grades-new-assessment' course_id bin_id %}">New Assessment</a>
     </div>
     <div class="extrawrapper text-center">
         <form action="{% url 'grades-assessment' course_id bin_id %}" method="post">
