@@ -34,7 +34,7 @@ def courses(request):
 
 @login_required
 def course(request, course_id):
-    if request.method == 'DELETE':
+    if request.method == 'POST':
         Course.objects.get(pk=course_id).delete()
         return HttpResponseRedirect("/courses/")
 
@@ -54,6 +54,9 @@ def course(request, course_id):
 
 @login_required
 def assessment(request, course_id, bin_id):
+    if request.method == 'POST':
+        Bin.objects.get(pk=bin_id).delete()
+        return HttpResponseRedirect("/course/" + str(course_id))
     assessments_list = Assessment.objects.filter(bin__pk=bin_id)
     assessments_dict = {}
     for assessment in assessments_list:
