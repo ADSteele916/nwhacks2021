@@ -1,0 +1,9 @@
+{% extends "grades/base.html" %}
+{% block content %}
+    {% if assessments_list %}
+        {% for assessment in assessments_list %}
+            <h2>{{ assessment.name }}</h2>
+            <p>{{ assessment.mark }}</p>
+        {% endfor %}
+    {% endif %}
+{% endblock content %}

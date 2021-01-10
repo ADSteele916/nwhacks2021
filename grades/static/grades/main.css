@@ -13,6 +13,10 @@
     margin-left: 20px;
 }
 
+.container-fluid {
+    width: 80%;
+}
+
 .home-text-backone {
     border-color: #F76C6C;
     border-width: 10px;
@@ -23,7 +27,7 @@
     right: 80px;
     top: 80px;
     width: 100%;
-    height:100%;
+    height: 100%;
 }
 
 .home-text-backtwo {
@@ -36,11 +40,11 @@
     bottom: 80px;
     box-sizing: border-box;
     width: 100%;
-    height:100%
+    height: 100%
 }
 
 .home-welcome {
-    font-size:50px;
+    font-size: 50px;
     font-weight: 600;
     margin-top: 100px;
     width: 100%;
@@ -60,6 +64,7 @@
     font-weight: 400;
 }
 
+
 .red-card {
     background-color: #f76c6c;
     color: white;
@@ -69,6 +74,7 @@
     background-color: #a8d0e6;
     color: white;
 }
+
 .yellow-card {
     background-color: #f8e9a1;
     color: white;
@@ -78,6 +84,25 @@
     text-decoration: none;
 }
 
-.container-fluid {
+.faq-header {
+    padding: 25px;
+    padding-bottom: 0px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+}
+
+.card {
     width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    border-color: #A8D0E6;
+}
+
+.card-header {
+    background-color: white;
+    border-color: #A8D0E6;
+    color: #374785;
 }

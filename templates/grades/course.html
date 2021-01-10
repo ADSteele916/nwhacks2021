@@ -1,0 +1,8 @@
+{% extends "grades/base.html" %}
+{% block content %}
+{% if bins_list %}
+    {% for bin in bins_list %}
+        <h2><a href="{% url 'grades-assessment' bin.course.id bin.pk %}">{{ bin.name }}</a></h2>
+    {% endfor %}
+    {% endif %}
+{% endblock content %}
