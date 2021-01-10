@@ -141,19 +141,15 @@
     text-decoration: none;
 }
 
-.courses-title {
-    font-family: 'Roboto Mono', monospace;
-    font-size: 50px;
-    font-weight: 600;
-    text-align: center;
-    margin-top: 25px;
-}
-
 .card-text {
+    z-index: 1;
+    position: absolute;
     text-align: right;
 }
 
 .card-title.display-1 {
+    z-index: 1;
+    position: absolute;
     font-size: 50px;
 }
 
