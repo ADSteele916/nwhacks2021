@@ -6,7 +6,6 @@ from .models import Course, Bin, Assessment
 from .forms import Courseform, Binform, Assessmentform
 
 
-
 def home(request):
     return render(request, "grades/home.html")
 
@@ -47,6 +46,7 @@ def course(request, course_id):
     context = {
         'bins_list': bins_list,
         'course_id': course_id,
+        'course_name': Course.objects.get(pk=course_id).name,
         'bins_dict': bins_dict
     }
     return HttpResponse(template.render(context, request))
@@ -63,6 +63,8 @@ def assessment(request, course_id, bin_id):
         'assessments_list': assessments_list,
         'course_id': course_id,
         'bin_id': bin_id,
+        'bin_name': Bin.objects.get(pk=bin_id).name,
+        'course_name': Course.objects.get(pk=course_id).name,
         'assessments_dict': assessments_dict
     }
     return HttpResponse(template.render(context, request))
@@ -78,15 +80,16 @@ def newCourse(request):
                                                credits=form.instance.credits,
                                                user=request.user.profile)
             new_course.save()
-        #    new_Course = form.save(commit=False)
-        #    new_Course.user = request.user
-        #    new_Course.save()
-        #    form.save()
+            #    new_Course = form.save(commit=False)
+            #    new_Course.user = request.user
+            #    new_Course.save()
+            #    form.save()
             return HttpResponseRedirect("/courses/")
     else:
         form = Courseform()
 
     return render(request, "grades/newcourse.html", {'form': form})
+
 
 @login_required
 def newBin(request, course_id):
@@ -104,19 +107,20 @@ def newBin(request, course_id):
 
     return render(request, "grades/newbin.html", {'form': form, 'course_id': course_id})
 
+
 @login_required
 def newAssessment(request, course_id, bin_id):
     if request.method == 'POST':
         form = Assessmentform(request.POST)
         if form.is_valid():
             new_assessment = Assessment.objects.create(name=form.instance.name,
-                                         weight=form.instance.weight,
-                                         total=form.instance.total,
-                                         mark=form.instance.mark,
-                                         bin=Bin.objects.get(pk=bin_id))
+                                                       weight=form.instance.weight,
+                                                       total=form.instance.total,
+                                                       mark=form.instance.mark,
+                                                       bin=Bin.objects.get(pk=bin_id))
             new_assessment.save()
             return HttpResponseRedirect("/course/" + str(course_id) + "/" + str(bin_id))
     else:
         form = Assessmentform()
 
-    return render(request, "grades/newassessment.html", {'form': form, 'course_id': course_id, 'bin_id':bin_id})
+    return render(request, "grades/newassessment.html", {'form': form, 'course_id': course_id, 'bin_id': bin_id})

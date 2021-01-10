@@ -1,10 +1,15 @@
 {% extends "grades/base.html" %}
 {% block content %}
+    <div class="page-title">{{ course_name }} - {{ bin_name }}</div>
     {% if assessments_list %}
         {% for assessment in assessments_list %}
-            <h2>{{ assessment.name }}</h2>
-            <p>{{ assessment.mark }}</p>
+            <div class = "assessment-marks {% cycle 'blue-mark' 'red-mark' 'yellow-mark' %}">
+                <div class="assessment-name">{{ assessment.name }}</div>
+                <div class="assessment-mark">{{ assessment.mark }}</div>
+            </div>
         {% endfor %}
     {% endif %}
-    <a href="{% url 'grades-new-assessment' course_id bin_id %}">New Assessment</a>
+    <div class ="extrawrapper1 text-center">
+        <a class = "new-assessment" href="{% url 'grades-new-assessment' course_id bin_id %}">New Assessment</a>
+    </div>
 {% endblock content %}

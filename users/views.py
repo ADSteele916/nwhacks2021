@@ -24,34 +24,6 @@ class ExtraLogoutView(LogoutView):
         return view_context
 
 
-class ExtraPasswordResetView(PasswordResetView):
-    def get_context_data(self, **kwargs):
-        view_context = super().get_context_data(**kwargs)
-        view_context.update({"title": "Reset Password"})
-        return view_context
-
-
-class ExtraPasswordResetDoneView(PasswordResetDoneView):
-    def get_context_data(self, **kwargs):
-        view_context = super().get_context_data(**kwargs)
-        view_context.update({"title": "Reset Password"})
-        return view_context
-
-
-class ExtraPasswordResetConfirmView(PasswordResetConfirmView):
-    def get_context_data(self, **kwargs):
-        view_context = super().get_context_data(**kwargs)
-        view_context.update({"title": "Confirm Password Reset"})
-        return view_context
-
-
-class ExtraPasswordResetCompleteView(PasswordResetCompleteView):
-    def get_context_data(self, **kwargs):
-        view_context = super().get_context_data(**kwargs)
-        view_context.update({"title": "Password Reset!"})
-        return view_context
-
-
 def register(request):
     if request.method == "POST":
         form = UserRegisterForm(request.POST)

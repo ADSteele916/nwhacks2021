@@ -3,6 +3,7 @@ from django.db import models
 
 from users.models import Profile
 
+
 class Course(models.Model):
     name = models.CharField(max_length=10)
     credits = models.PositiveSmallIntegerField()
@@ -34,13 +35,15 @@ class Bin(models.Model):
         return self.name
 
     def get_grade(self) -> float:
-        weighted_assignments = [(a.weight, a.get_grade() * a.weight) if a.mark is not None else (0.0, 0.0) for a in self.assessment_set.all()]
+        weighted_assignments = [(a.weight, a.get_grade() * a.weight) if a.mark is not None else (0.0, 0.0) for a in
+                                self.assessment_set.all()]
         weighted_marks = [wa[1] for wa in weighted_assignments]
         for i in range(self.drop_n_lowest):
             idx = weighted_marks.index(min(weighted_marks))
             weighted_marks.pop(idx)
             weighted_assignments.pop(idx)
-        return sum(weighted_assignments)
+
+        return sum(list(map(lambda x: x[0] * x[1], weighted_assignments))) / sum(list(map(lambda x: x[0], weighted_assignments)))
 
 
 class Assessment(models.Model):
