@@ -13,6 +13,10 @@
     margin-left: 20px;
 }
 
+.container-fluid {
+    width: 80%;
+}
+
 .home-text-backone {
     border-color: #F76C6C;
     border-width: 10px;
@@ -78,6 +82,20 @@
     text-decoration: none;
 }
 
-.container-fluid {
+.faq-header {
+    padding: 25px;
+    padding-bottom: 0px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+}
+
+.card {
     width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.card-header {
+    background-color: white;
 }
