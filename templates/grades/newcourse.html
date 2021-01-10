@@ -1,9 +1,16 @@
 {% extends "grades/base.html" %}
 {% block content %}
-      <form action="{% url 'grades-new-course' %}" method="post" >
-      {% csrf_token %}
+    <div class="page-title">add a course</div>
 
-      {{ form }}
-      <input type="submit" value="Submit">
+        <form action="{% url 'grades-new-course' %}" method="post" >
+        {% csrf_token %}
+
+        <div class="login-fields">
+            {{ form }}
+        </div>
+
+        <div class="text-center">
+            <p><input type="submit" value="Submit"></p>
+        </div>
       </form>
 {% endblock content %}
