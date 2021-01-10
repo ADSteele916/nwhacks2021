@@ -81,6 +81,11 @@
 
 /* courses */
 
+.courses {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
 .red-card {
     background-color: #f76c6c;
     color: white;
@@ -101,6 +106,7 @@
 }
 
 .card {
+    height: 0;
     width: 100%;
     padding-top: 100%;
     position: relative;
@@ -262,11 +268,12 @@ a:hover {
 /* Assessment */
 .assessment-marks {
     font-family: 'Roboto Mono', monospace;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     display: grid;
     grid-template-columns: 80% 20%;
     width: 60%;
+    margin: auto;
 }
 
 .red-mark {
@@ -296,7 +303,8 @@ a:hover {
     text-align: left;
     font-size: 35px;
     font-family: 'Roboto Mono', monospace;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     width: 60%;
+    margin: auto;
 }
