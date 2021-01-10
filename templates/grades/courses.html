@@ -7,20 +7,18 @@
     <div class="courses">
         {% if courses_list %}
             {% for course in courses_list %}
-                <div class="card">
-                    <a href="{% url 'grades-course' course.pk %}">
-                        <div class="card-body {% cycle 'blue-card' 'red-card' 'yellow-card' %}">
-                            <h2 class="card-title display-1"><strong>{{ course.name }}</strong></h2>
-                            <p class="card-text">
-                                {% for key, value in courses_dict.items %}
-                                    {% if key == course.pk %}
-                                        {{ value }}
-                                    {% endif %}
-                                    {% endfor %}%
-                            </p>
-                        </div>
-                    </a>
-                </div>
+                <a href="{% url 'grades-course' course.pk %}">
+                    <div class="card-body {% cycle 'blue-card' 'red-card' 'yellow-card' %}">
+                        <h2 class="card-title display-1"><strong>{{ course.name }}</strong></h2>
+                        <p class="card-text">
+                            {% for key, value in courses_dict.items %}
+                                {% if key == course.pk %}
+                                    {{ value }}
+                                {% endif %}
+                                {% endfor %}%
+                        </p>
+                    </div>
+                </a>
             {% endfor %}
         {% endif %}
 
