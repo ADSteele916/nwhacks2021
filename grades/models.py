@@ -20,6 +20,10 @@ class Course(models.Model):
             rsf += b.weight * b.get_grade()
         return rsf / weights * 100.0
 
+    def delete(self):
+        if self.user:
+            self.user.delete()
+        super(Course, self).delete()
 
 class Bin(models.Model):
     name = models.CharField(max_length=20)

@@ -370,3 +370,9 @@ a:hover {
 .extrawrapper1 {
     padding-top: 20px;
 }
+
+.add-new-fields {
+    font-family: 'Roboto Mono', monospace;
+    width: 30%;
+    margin: auto;
+}
