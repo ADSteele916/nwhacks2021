@@ -18,8 +18,8 @@ class Course(models.Model):
         weights = 0.0
         rsf = 0.0
         for b in self.bin_set.all():
-            if b.get_grade == "No marks yet":
-                continue
+            if b.get_grade() == "No marks yet":
+                pass
             else:
                 weights += b.weight
                 rsf += b.weight * b.get_grade() / 100.0
