@@ -18,7 +18,7 @@ def about(request):
 
 @login_required
 def courses(request):
-    courses_list = Course.objects.filter(user=request.user)
+    courses_list = Course.objects.get(user=request.user)
     template = loader.get_template("grades/courses.html")
     context = {
         'courses_list': courses_list,
