@@ -99,21 +99,27 @@
 }
 
 .red-card {
+    position: relative;
+    margin: 20px;
+    display: inline-block;
     background-color: #f76c6c;
 }
 
 .blue-card {
+    position: relative;
+    margin: 20px;
+    display: inline-block;
     background-color: #a8d0e6;
 }
 
 .yellow-card {
+    position: relative;
+    margin: 20px;
+    display: inline-block;
     background-color: #f8e9a1;
 }
 
 .card-body {
-    position: relative;
-    margin: 20px;
-    display: inline-block;
     color: white;
 }
 
