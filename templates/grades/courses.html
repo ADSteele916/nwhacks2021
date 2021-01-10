@@ -1,6 +1,9 @@
 {% extends "grades/base.html" %}
 {% block content %}
-    <h1 class="text-center">Courses</h1>
+    <div class="courses-title">
+        courses
+    </div>
+
     <div class="row">
         {% if courses_list %}
             {% for course in courses_list %}
