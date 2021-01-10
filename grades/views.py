@@ -3,7 +3,8 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from .models import Course, Bin, Assessment
-from .forms import Courseform
+from .forms import Courseform, Binform
+
 
 
 def home(request):
@@ -67,3 +68,17 @@ def newCourse(request):
         form = Courseform()
 
     return render(request, "grades/newcourse.html", {'form': form})
+
+@login_required
+def newBin(request, course_id):
+    if request.method == 'POST':
+        form = Binform(request.POST)
+        if form.is_valid():
+            new_bin = form.save(commit=False)
+            new_bin.course = course_id
+            new_bin.save()
+            return HttpResponseRedirect("/courses/" + course_id)
+    else:
+        form = Binform()
+
+    return render(request, "grades/newbin.html", {'form': form})
