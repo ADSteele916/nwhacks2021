@@ -252,3 +252,11 @@
     font-family: 'Roboto Mono', monospace;
     margin-top: 10px;
 }
+
+a {
+    color: #F76C6C;
+}
+
+a:hover {
+    color: #f8e9a1;
+}
