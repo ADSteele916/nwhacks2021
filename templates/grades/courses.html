@@ -2,54 +2,23 @@
 {% block content %}
     <h1 class="text-center">Courses</h1>
     <div class="row">
-
-        <div class="col-md-4 col-lg-4 col-sm-12 d-flex align-items-stretch">
-            <div class="card">
-                <a href="base.html">
-                    <div class="card-body red-card">
-                        <h2 class="card-title display-1"><strong>ELEC 204</strong></h2>
-                        <p class="card-text">
-                            100%
-                        </p>
+        {% if courses_list %}
+            {% for course in courses_list %}
+                <div class="col-md-4 col-lg-4 col-sm-12 d-flex align-items-stretch">
+                    <div class="card">
+                        <a href="base.html">
+                            <div class="card-body {% cycle 'blue-card' 'red-card' 'yellow-card' %}">
+                                <h2 class="card-title display-1"><strong>{{ course.name }}</strong></h2>
+                                <p class="card-text">
+                                    100%
+                                </p>
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
-        </div>
-
-    <div class="col-md-4 col-lg-4 col-sm-12 d-flex align-items-stretch">
-            <div class="card">
-                <a href="base.html">
-                    <div class="card-body blue-card">
-                        <h2 class="card-title display-1"><strong>CPEN 221</strong></h2>
-                        <p class="card-text">
-                            100%
-                        </p>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-    <div class="col-md-4 col-lg-4 col-sm-12 d-flex align-items-stretch">
-            <div class="card">
-                <a href="base.html">
-                    <div class="card-body yellow-card">
-                        <h2 class="card-title display-1"><strong>ENPH 258</strong></h2>
-                        <p class="card-text">
-                            100%
-                        </p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-<div class = "courses-taken">
-        {% if courses|length > 0 %}
-            <legend class="border-bottom mb-4">Currently Monitoring:</legend>
-            <ul>
-                {% for course in courses %}
-                    <li>{{ course }}</li>
-                {% endfor %}
-            </ul>
+                </div>
+            {% endfor %}
         {% endif %}
+
+
     </div>
 {% endblock content %}
