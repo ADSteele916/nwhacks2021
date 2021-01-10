@@ -2,6 +2,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        .navbar {
+            -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.27);
+            -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.27);
+            box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.27);
+
+            /* the rest of your styling */
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -11,9 +20,35 @@
         <title>Smart Grade Tracker</title>
     {% endif %}
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Fira+Sans">
+
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f59871;">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="#">Courses</a>
+                <a class="nav-link" href="#">FAQ</a>
+            </div>
+        </div>
+        <div class="navbar-collapse justify-content-end">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 <main role="main" class="container">
     {% if messages %}
         {% for message in messages %}
@@ -23,5 +58,9 @@
         {% endfor %}
     {% endif %}
     {% block content %}{% endblock %}
+
 </main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
 </body>
