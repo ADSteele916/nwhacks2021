@@ -88,29 +88,28 @@
 
 .red-card {
     background-color: #f76c6c;
-    color: white;
 }
 
 .blue-card {
     background-color: #a8d0e6;
-    color: white;
 }
 
 .yellow-card {
     background-color: #f8e9a1;
-    color: white;
 }
 
-.card a {
-    text-decoration: none;
-}
-
-.card {
+.card-body {
     height: 0;
     width: 100%;
     padding-top: 100%;
     position: relative;
     border-width: 0px;
+    color: white;
+    margin: 10px;
+}
+
+.card-body a {
+    text-decoration: none;
 }
 
 .courses-title {
