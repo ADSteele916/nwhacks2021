@@ -5,6 +5,13 @@
         {% for bin in bins_list %}
             <div class = "course-assessments {% cycle 'blue-mark' 'red-mark' 'yellow-mark' %}">
                 <h2 class="course-name"><a href="{% url 'grades-assessment' bin.course.pk bin.pk %}">{{ bin.name }}</a></h2>
+              <p>
+                {% for key, value in bins_dict.items %}
+                    {% if key == bin.pk %}
+                        {{ value }}
+                    {% endif %}
+                {% endfor %}%
+            </p>
             </div>
         {% endfor %}
     {% endif %}
@@ -12,6 +19,10 @@
         <a class = "new-category" href="{% url 'grades-new-bin' course_id %}">New Category</a>
     </div>
     <div class="extrawrapper text-center">
-        <a class = "new-category" data-confirm="Are you sure?" data-method="delete" href="{% url 'grades-course' course_id%}" rel="nofollow">Delete</a>
+        <a href="{% url 'grades-new-bin' course_id %}">New Category</a>
+    <form action="{% url 'grades-course' course_id %}" method="delete">
+    <input type="submit" value="Delete">
+    </form>
     </div>
+    
 {% endblock content %}
