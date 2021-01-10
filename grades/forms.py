@@ -1,5 +1,7 @@
-from django import forms
+from django.forms import ModelForm
+from .models import Course
 
-class Courseform(forms.Form):
-    course_name = forms.CharField(label="Course name", max_length=20)
-    course_credits = forms.IntegerField(label="Course credits")
+class Courseform(ModelForm):
+    class Meta:
+        model = Course
+        fields = ['name', 'credits']
