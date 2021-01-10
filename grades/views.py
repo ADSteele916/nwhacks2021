@@ -35,6 +35,7 @@ def course(request, course_id):
     template = loader.get_template("grades/course.html")
     context = {
         'bins_list': bins_list,
+        'course_id': course_id,
     }
     return HttpResponse(template.render(context, request))
 
