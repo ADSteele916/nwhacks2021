@@ -1,10 +1,12 @@
 {% extends "grades/base.html" %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
 {% block content %}
     <div class="page-title">add a new assessment</div>
           <form action="{% url 'grades-new-assessment' course_id bin_id %}" method="post" >
           {% csrf_token %}
                 <div class="login-fields text-center">
-                    {{ form }}
+                    {{ form|crispy }}
                 </div>
 
                 <div class="text-center">
