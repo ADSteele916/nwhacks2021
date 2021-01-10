@@ -35,6 +35,7 @@ def course(request, course_id):
     template = loader.get_template("grades/course.html")
     context = {
         'bins_list': bins_list,
+        'course_id': course_id,
     }
     return HttpResponse(template.render(context, request))
 
@@ -74,10 +75,12 @@ def newBin(request, course_id):
     if request.method == 'POST':
         form = Binform(request.POST)
         if form.is_valid():
-            new_bin = form.save(commit=False)
-            new_bin.course = course_id
+            new_bin = Bin.objects.create(name=form.instance.name,
+                                         weight=form.instance.weight,
+                                         drop_n_lowest=form.instance.drop_n_lowest,
+                                         course=Course.objects.get(pk=course_id))
             new_bin.save()
-            return HttpResponseRedirect("/courses/" + course_id)
+            return HttpResponseRedirect("/course/" + str(course_id))
     else:
         form = Binform()
 

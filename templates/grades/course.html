@@ -5,5 +5,5 @@
             <h2><a href="{% url 'grades-assessment' bin.course.pk bin.pk %}">{{ bin.name }}</a></h2>
         {% endfor %}
     {% endif %}
-    <a href="{% url 'grades-new-bin' bin.course.pk %}">New Category</a>
+    <a href="{% url 'grades-new-bin' course_id %}">New Category</a>
 {% endblock content %}
