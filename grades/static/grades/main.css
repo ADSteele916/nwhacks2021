@@ -85,8 +85,6 @@
     display: grid;
     grid-template-columns: 33% 33% 33%;
     margin: auto;
-    grid-gap: 30px;
-    justify-items: center;
     width: 80%;
 }
 
@@ -112,6 +110,7 @@
     color: white;
     font-family: 'Roboto Mono', monospace;
     background-color: #f76c6c;
+    border: 20px solid white;
 }
 
 .blue-card {
@@ -124,6 +123,7 @@
     color: white;
     font-family: 'Roboto Mono', monospace;
     background-color: #a8d0e6;
+    border: 20px solid white;
 }
 
 .yellow-card {
@@ -136,6 +136,7 @@
     color: white;
     font-family: 'Roboto Mono', monospace;
     background-color: #f8e9a1;
+    border: 20px solid white;
 }
 
 .sq-setter-w {
@@ -149,21 +150,19 @@
 }
 
 .card-text {
-    text-decoration: none;
     position: absolute;
     z-index: 1;
-    right: 20px;
-    bottom: 20px;
+    right: 40px;
+    bottom: 40px;
     text-align: right;
     font-size: 15px;
 }
 
 .card-title.display-1 {
-    text-decoration: none;
     position: absolute;
     z-index: 1;
-    top: 20px;
-    left: 20px;
+    top: 40px;
+    left: 40px;
     font-size: 50px;
 }
 
