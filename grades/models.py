@@ -18,7 +18,7 @@ class Course(models.Model):
         for b in self.bin_set.all():
             weights += b.weight
             rsf += b.weight * b.get_grade()
-        return rsf / weights * 100.0
+        return rsf / weights * 100.0, 2
 
     def delete(self):
         if self.user:
