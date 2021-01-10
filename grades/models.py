@@ -21,8 +21,9 @@ class Course(models.Model):
         return rsf / weights * 100.0
 
     def delete(self):
-        if self.user:
-            self.user.delete()
+        bins_list = Bin.objects.filter(course__pk=self.pk)
+        for bin in bins_list:
+            bin.delete()
         super(Course, self).delete()
 
 
@@ -31,6 +32,12 @@ class Bin(models.Model):
     weight = models.PositiveSmallIntegerField()
     drop_n_lowest = models.PositiveSmallIntegerField()
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
+
+    def delete(self):
+        assessments_list = Assessment.objects.filter(bin__pk=self.id)
+        for assessment in assessments_list:
+            assessment.delete()
+        super(Bin, self).delete()
 
     def __str__(self):
         return self.name
@@ -43,6 +50,7 @@ class Bin(models.Model):
             idx = weighted_marks.index(min(weighted_marks))
             weighted_marks.pop(idx)
             weighted_assignments.pop(idx)
+
 
         return sum(list(map(lambda x: x[1], weighted_assignments))) / sum(
             list(map(lambda x: x[0], weighted_assignments))) * 100.0
