@@ -21,14 +21,12 @@
             {% endfor %}
         {% endif %}
 
-
-        <div class="card-body red-card">
-            <a href="{% url 'grades-new-course'%}">
-                    <img src="http://dummyimage.com/50x50/000/fff.gif&text=50x50" class="sq-setter-w"/>
-                    <h2 class="card-title display-1"><strong>Add new course</strong></h2>
-
-            </a>
-        </div>
+        <a href="{% url 'grades-new-course'%}">
+            <div class="card-body red-card">
+                        <img src="http://dummyimage.com/50x50/000/fff.gif&text=50x50" class="sq-setter-w"/>
+                        <h2 class="card-title display-1"><strong>Add new course</strong></h2>
+            </div>
+        </a>
 
     </div>
 {% endblock content %}
