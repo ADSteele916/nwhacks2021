@@ -23,7 +23,7 @@ class Course(models.Model):
             weights += b.weight
             rsf += b.weight * b.get_grade() / 100.0
         try:
-            return rsf / weights * 100.0
+            return round(rsf / weights * 100.0, 2)
         except ZeroDivisionError:
             return "No marks yet"
 
@@ -61,7 +61,7 @@ class Bin(models.Model):
             weighted_assignments.pop(idx)
 
         try:
-            return sum(list(map(lambda x: x[1], weighted_assignments))) / sum(list(map(lambda x: x[0], weighted_assignments))) * 100.0
+            return round(sum(list(map(lambda x: x[1], weighted_assignments))) / sum(list(map(lambda x: x[0], weighted_assignments))) * 100.0, 2)
         except ZeroDivisionError:
             return "No marks yet"
 
