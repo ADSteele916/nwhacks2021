@@ -8,26 +8,27 @@
         {% if courses_list %}
             {% for course in courses_list %}
 
-                    <a href="{% url 'grades-course' course.pk %}">
-                        <div class="card-body {% cycle 'blue-card' 'red-card' 'yellow-card' 'red-card' 'yellow-card' 'blue-card' %}">
+                    <div class="card-body {% cycle 'blue-card' 'red-card' 'yellow-card' 'red-card' 'yellow-card' 'blue-card' %}">
+                        <a href="{% url 'grades-course' course.pk %}">
                             <img src="http://dummyimage.com/50x50/000/fff.gif&text=50x50" class="sq-setter-w"/>
                             <h2 class="card-title display-1"><strong>{{ course.name }}</strong></h2>
                             <p class="card-text">
                                 100%
                             </p>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
 
             {% endfor %}
         {% endif %}
 
 
+        <div class="card-body red-card">
             <a href="{% url 'grades-new-course'%}">
-                <div class="card-body red-card">
                     <img src="http://dummyimage.com/50x50/000/fff.gif&text=50x50" class="sq-setter-w"/>
                     <h2 class="card-title display-1"><strong>Add new course</strong></h2>
-                </div>
+
             </a>
+        </div>
 
     </div>
 {% endblock content %}

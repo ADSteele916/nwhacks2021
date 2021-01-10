@@ -102,7 +102,7 @@
     }
 }
 
-.card-body {
+.red-card {
     position: relative;
     padding: 20px;
     margin: auto;
@@ -111,17 +111,30 @@
     display: inline-block;
     color: white;
     font-family: 'Roboto Mono', monospace;
-}
-
-.red-card {
     background-color: #f76c6c;
 }
 
 .blue-card {
+    position: relative;
+    padding: 20px;
+    margin: auto;
+    width: 90%;
+    height: auto;
+    display: inline-block;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
     background-color: #a8d0e6;
 }
 
 .yellow-card {
+    position: relative;
+    padding: 20px;
+    margin: auto;
+    width: 90%;
+    height: auto;
+    display: inline-block;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
     background-color: #f8e9a1;
 }
 
