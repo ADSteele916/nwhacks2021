@@ -81,9 +81,13 @@
 
 /* courses */
 
+
+
 .courses {
     display: grid;
     grid-template-columns: 33% 33% 33%;
+    width: 80%;
+    margin: auto;
 }
 
 @media(max-width: 800px) {
@@ -92,7 +96,7 @@
     }
 }
 
-@media(max-width: 400px) {
+@media(max-width: 620px) {
     .courses {
         grid-template-columns: 100%;
     }
@@ -100,10 +104,8 @@
 
 .red-card {
     position: relative;
-    margin: 20px;
+    padding: 20px;
     display: inline-block;
-    height:100%;
-    width: 100%;
     background-color: #f76c6c;
     color: white;
     font-family: 'Roboto Mono', monospace;
@@ -113,8 +115,6 @@
     position: relative;
     margin: 20px;
     display: inline-block;
-    height:100%;
-    width: 100%;
     background-color: #a8d0e6;
     color: white;
     font-family: 'Roboto Mono', monospace;
@@ -124,8 +124,6 @@
     position: relative;
     margin: 20px;
     display: inline-block;
-    height:100%;
-    width: 100%;
     background-color: #f8e9a1;
     color: white;
     font-family: 'Roboto Mono', monospace;
@@ -143,13 +141,13 @@
 
 .card-text {
     z-index: 1;
-    position: absolute;
+    position: relative;
     text-align: right;
 }
 
 .card-title.display-1 {
     z-index: 1;
-    position: absolute;
+    position: relative;
     font-size: 50px;
 }
 
