@@ -9,23 +9,6 @@
             box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.27);
         }
 
-        .red-card {
-            background-color: #f76c6c;
-            color: white;
-        }
-
-        .blue-card {
-            background-color: #a8d0e6;
-            color: white;
-        }
-        .yellow-card {
-            background-color: #f8e9a1;
-            color: white;
-        }
-
-        .card a {
-            text-decoration: none;
-        }
     </style>
 
     <meta charset="UTF-8">
@@ -44,11 +27,12 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href={% static 'grades/main.css' %}>
 
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f59871;">
+<nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,27 +40,27 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="{% url "grades-home" %}">Home</a>
-                <a class="nav-link active" href="{% url "grades-faq" %}">FAQ</a>
-                <a class="nav-link active" href="{% url "grades-about" %}">About</a>
+                <a class="nav-link active" aria-current="page" href="{% url "grades-home" %}">home</a>
+                <a class="nav-link active" href="{% url "grades-faq" %}">faq</a>
+                <a class="nav-link active" href="{% url "grades-about" %}">about</a>
             </div>
         </div>
         <div class="navbar-collapse justify-content-end">
             {% if user.is_authenticated %}
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url "logout" %}">Logout</a>
+                        <a class="nav-link" href="{% url "logout" %}">logout</a>
                     </li>
                 </ul>
             {% else %}
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url "login" %}">Login</a>
+                        <a class="nav-link" href="{% url "login" %}">login</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url "register" %}">Register</a>
+                        <a class="nav-link" href="{% url "register" %}">register</a>
                     </li>
                 </ul>
             {% endif %}

@@ -2,8 +2,9 @@
     -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.27);
     -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.27);
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.27);
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Roboto Mono', monospace;
     font-size: 30px;
+    background-color: #F76C6C;
     /* the rest of your styling */
 }
 
@@ -12,21 +13,57 @@
     margin-left: 20px;
 }
 
+.home-text-backone {
+    border-color: #F76C6C;
+    background-color: #F76C6C;
+    z-index: 1;
+    position: absolute;
+}
+
+.home-text-backtwo {
+    border-color: #F8E9A1;
+    background-color: #F8E9A1;
+    z-index: 2;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
 .home-welcome {
     font-size:50px;
     font-weight: 600;
     margin-top: 100px;
 }
 
-.home-section  {
-    margin-top: 30px;
-    display: grid;
-    grid-template-columns: 35% 65%
-}
-
 .home-text {
     padding: 25px;
-    background-color:#f76c6c;
-    font-family: 'Work Sans', sans-serif;
+    background-color: #A8D0E6;
+    font-family: 'Roboto Mono', monospace;
     font-weight: 400;
+    margin-top: 180px;
+    width: 65%;
+    float: right;
+
+}
+
+.red-card {
+    background-color: #f76c6c;
+    color: white;
+}
+
+.blue-card {
+    background-color: #a8d0e6;
+    color: white;
+}
+.yellow-card {
+    background-color: #f8e9a1;
+    color: white;
+}
+
+.card a {
+    text-decoration: none;
+}
+
+.container-fluid {
+    width: 80%;
 }
