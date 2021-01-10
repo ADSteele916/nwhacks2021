@@ -81,4 +81,4 @@ def newBin(request, course_id):
     else:
         form = Binform()
 
-    return render(request, "grades/newbin.html", {'form': form})
+    return render(request, "grades/newbin.html", {'form': form, 'course_id': course_id})
