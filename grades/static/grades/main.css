@@ -16,7 +16,6 @@
     font-family: 'Roboto Mono', monospace;
     font-size: 30px;
     background-color: #F76C6C;
-    /* the rest of your styling */
 }
 
 .nav-link {
@@ -82,7 +81,6 @@
 
 /* courses */
 
-
 .red-card {
     background-color: #f76c6c;
     color: white;
@@ -102,6 +100,12 @@
     text-decoration: none;
 }
 
+.card {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+}
+
 .courses-title {
     font-family: 'Roboto Mono', monospace;
     font-size: 50px;
@@ -114,7 +118,7 @@
     text-align: right;
 }
 
-.card-title display-1 {
+.card-title.display-1 {
     font-family: 'Roboto Mono', monospace;
     font-size: 50px;
 }
@@ -123,14 +127,12 @@
 /* faq */
 
 .faq-header {
-    padding: 25px;
-    padding-bottom: 0px;
+    padding: 25px 25px 0px;
 }
 
 .card {
     width: 80%;
-    margin: auto;
-    margin-top: 50px;
+    margin: 50px auto auto;
     padding: 20px;
     font-family: 'Roboto Mono', monospace;
     font-size: 20px;
@@ -142,10 +144,6 @@
     background-color: white;
     border-color: #A8D0E6;
     border-width: 3px;
-}
-
-.collapsed.card-link {
-    text-decoration: none;
 }
 
 /* about */
@@ -203,7 +201,7 @@
     border-style: solid;
 }
 
-/* Login / Logout */
+/* Login / Logout / Forms */
 .login-fields {
     font-family: 'Roboto Mono', monospace;
     width: 65%;
@@ -259,4 +257,34 @@ a {
 
 a:hover {
     color: #f8e9a1;
+}
+
+/* Assessment */
+.assessment-marks {
+    font-family: 'Roboto Mono', monospace;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: grid;
+    grid-template-columns: 80% 20%
+    width: 60%
+}
+
+.red-mark {
+    border-bottom: 3px solid #f76c6c;
+}
+
+.blue-mark {
+    border-bottom: 3px solid #a8d0e6;
+}
+
+.yellow-mark {
+    border-bottom: 3px solid #f8e9a1;
+}
+
+.assessment-mark {
+    text-align: right;
+}
+
+.assessment-name {
+    text-align: left;
 }

@@ -2,8 +2,10 @@
 {% block content %}
     {% if assessments_list %}
         {% for assessment in assessments_list %}
-            <h2>{{ assessment.name }}</h2>
-            <p>{{ assessment.mark }}</p>
+            <div class = "assessment-marks {% cycle 'blue-mark' 'red-mark' 'yellow-mark' %}">
+                <h2 class="assessment-name">{{ assessment.name }}</h2>
+                <p class="assessment-mark">{{ assessment.mark }}</p>
+            </div>
         {% endfor %}
     {% endif %}
     <a href="{% url 'grades-new-assessment' course_id bin_id %}">New Assessment</a>
