@@ -1,0 +1,16 @@
+{% extends "grades/base.html" %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset>
+            <legend>Join Today</legend>
+            {{ form|crispy }}
+        </fieldset>
+        <button class="btn btn-outline-info" type="submit">Sign Up</button>
+    </form>
+    <small>
+        Already have an account? <a class="ml-2" href="{% url "login" %}">Sign In</a>
+    </small>
+{% endblock content %}

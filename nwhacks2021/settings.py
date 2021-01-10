@@ -11,10 +11,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 import os
+from pathlib import Path
 
 import django_heroku
-
-from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -45,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "crispy_forms",
     "grades",
     "users",
 ]
@@ -133,6 +133,11 @@ if (os.environ.get("DJANGO_DEBUG_VALUE") != "True") and (
 ):
     STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATIC_URL = '/static/'
+
+LOGIN_REDIRECT_URL = "courses-home"
+LOGIN_URL = "login"
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 if (os.environ.get("DJANGO_DEBUG_VALUE") != "True") and (
     os.environ.get("DJANGO_DEBUG_VALUE") is not None
