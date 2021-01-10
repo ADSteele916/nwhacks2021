@@ -61,11 +61,9 @@ class Bin(models.Model):
             weighted_assignments.pop(idx)
 
         try:
-            a = sum(list(map(lambda x: x[1], weighted_assignments))) / sum(list(map(lambda x: x[0], weighted_assignments))) * 100.0
-            return
+            return sum(list(map(lambda x: x[1], weighted_assignments))) / sum(list(map(lambda x: x[0], weighted_assignments))) * 100.0
         except ZeroDivisionError:
             return "No marks yet"
-
 
 
 class Assessment(models.Model):

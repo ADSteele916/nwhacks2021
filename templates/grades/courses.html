@@ -15,7 +15,7 @@
                                 <p class="card-text">
                                     {% for key, value in courses_dict.items %}
                                         {% if key == course.pk %}
-                                            {{ value }}
+                                            <script>{{ value }}.toFixed(2)</script>
                                         {% endif %}
                                         {% endfor %}%
                                 </p>
