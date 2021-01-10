@@ -6,7 +6,7 @@
             {% for course in courses_list %}
                 <div class="col-md-4 col-lg-4 col-sm-12 d-flex align-items-stretch">
                     <div class="card">
-                        <a href="{%  url 'grades-course' course.pk %}">
+                        <a href="{% url 'grades-course' course.pk %}">
                             <div class="card-body {% cycle 'blue-card' 'red-card' 'yellow-card' %}">
                                 <h2 class="card-title display-1"><strong>{{ course.name }}</strong></h2>
                                 <p class="card-text">
@@ -19,6 +19,14 @@
             {% endfor %}
         {% endif %}
 
-
+        <div class="col-md-4 col-lg-4 col-sm-12 d-flex align-items-stretch">
+            <div class="card">
+                <a href="{% url 'grades-new-course' %}">
+                    <div class="card-body red-card">
+                        <h2 class="card-title display-1"><strong>New</strong></h2>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
 {% endblock content %}

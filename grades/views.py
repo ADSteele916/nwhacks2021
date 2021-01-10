@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from .models import Course, Bin, Assessment
+from .forms import Courseform
 
 def home(request):
     return render(request, "grades/home.html")
@@ -37,3 +38,14 @@ def assessment(request, course_id, bin_id):
         'assessments_list': assessments_list,
     }
     return HttpResponse(template.render(context, request))
+
+def newCourse(request):
+    if request.method == 'POST':
+        form = Courseform(request.POST)
+
+        if form.is_valid():
+            return HttpResponseRedirect("/courses/")
+    else:
+        form = Courseform()
+
+    return render(request, "grades/newcourse.html", {'form': form})
