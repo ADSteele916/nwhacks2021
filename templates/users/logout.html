@@ -1,7 +1,10 @@
 {% extends "grades/base.html" %}
 {% block content %}
     <p class="page-title">You have been logged out.</p>
-    <small class="login-again">
-        <a href="{% url "login" %}">Log In Again</a>
-    </small>
+
+    <div class="text-center">
+        <small class="login-bottom-txt">
+            <a href="{% url "login" %}">Log In Again</a>
+        </small>
+    </div>
 {% endblock content %}
