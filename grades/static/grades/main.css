@@ -373,7 +373,7 @@ a:hover {
 }
 
 .delete-button {
-    padding: 20px;
+    padding: 5px 20px;
     font-family: 'Roboto Mono', monospace;
     border-color: #A8D0E6;
     border-width: 3px;
