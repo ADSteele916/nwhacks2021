@@ -16,7 +16,7 @@
         <form action="{% url 'grades-assessment' course_id bin_id %}" method="post">
             {% csrf_token %}
             <input type="hidden" name="_method" value="delete">
-            <input type="submit" value="Delete">
+            <input class="delete-button" type="submit" value="Delete">
         </form>
     </div>
 {% endblock content %}
