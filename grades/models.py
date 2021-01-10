@@ -17,13 +17,14 @@ class Course(models.Model):
         rsf = 0.0
         for b in self.bin_set.all():
             weights += b.weight
-            rsf += b.weight * b.get_grade()
+            rsf += b.weight * b.get_grade() / 100.0
         return rsf / weights * 100.0
 
     def delete(self):
         if self.user:
             self.user.delete()
         super(Course, self).delete()
+
 
 class Bin(models.Model):
     name = models.CharField(max_length=20)
@@ -43,7 +44,8 @@ class Bin(models.Model):
             weighted_marks.pop(idx)
             weighted_assignments.pop(idx)
 
-        return sum(list(map(lambda x: x[1], weighted_assignments))) / sum(list(map(lambda x: x[0], weighted_assignments)))
+        return sum(list(map(lambda x: x[1], weighted_assignments))) / sum(
+            list(map(lambda x: x[0], weighted_assignments))) * 100.0
 
 
 class Assessment(models.Model):
