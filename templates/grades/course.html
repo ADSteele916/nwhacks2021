@@ -3,6 +3,7 @@
 {% if bins_list %}
     {% for bin in bins_list %}
         <p>{{ bin.name }}</p>
+        <p>{{ bin.course__pk }}</p>
     {% endfor %}
     {% endif %}
 {% endblock content %}
