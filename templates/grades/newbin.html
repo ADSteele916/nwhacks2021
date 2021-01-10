@@ -7,7 +7,7 @@
       <form action="{% url 'grades-new-bin' course_id %}" method="post" >
       {% csrf_token %}
 
-            <div class="login-fields">
+            <div class="add-new-fields">
                 {{ form|crispy }}
             </div>
 

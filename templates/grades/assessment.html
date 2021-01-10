@@ -5,7 +5,7 @@
         {% for assessment in assessments_list %}
             <div class="assessment-marks {% cycle 'blue-mark' 'red-mark' 'yellow-mark' %}">
                 <div class="assessment-name">{{ assessment.name }}</div>
-                <div class="assessment-mark">{{ assessment.mark }}</div>
+                <div class="assessment-mark">{{ assessment.mark }} / {{ assessment.total }}</div>
             </div>
         {% endfor %}
     {% endif %}

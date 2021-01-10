@@ -3,16 +3,15 @@
     <div class="page-title">{{ course_name }}</div>
     {% if bins_list %}
         {% for bin in bins_list %}
-            <div class="course-assessments {% cycle 'blue-mark' 'red-mark' 'yellow-mark' %}">
-                <h2 class="course-name"><a href="{% url 'grades-assessment' bin.course.pk bin.pk %}">{{ bin.name }}</a>
-                </h2>
-                <p>
+            <div class = "course-assessments {% cycle 'blue-mark' 'red-mark' 'yellow-mark' %}">
+                <h2 class="course-name"><a href="{% url 'grades-assessment' bin.course.pk bin.pk %}">{{ bin.name }}</a></h2>
+                 <p class="course-assessment-grade">
                     {% for key, value in bins_dict.items %}
                         {% if key == bin.pk %}
                             {{ value }}
                         {% endif %}
                     {% endfor %}%
-                </p>
+                 </p>
             </div>
         {% endfor %}
     {% endif %}
