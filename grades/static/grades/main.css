@@ -102,25 +102,33 @@
     position: relative;
     margin: 20px;
     display: inline-block;
+    height:100%;
+    width: 100%;
     background-color: #f76c6c;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
 }
 
 .blue-card {
     position: relative;
     margin: 20px;
     display: inline-block;
+    height:100%;
+    width: 100%;
     background-color: #a8d0e6;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
 }
 
 .yellow-card {
     position: relative;
     margin: 20px;
     display: inline-block;
+    height:100%;
+    width: 100%;
     background-color: #f8e9a1;
-}
-
-.card-body {
     color: white;
+    font-family: 'Roboto Mono', monospace;
 }
 
 .sq-setter-w {
@@ -146,7 +154,6 @@
 }
 
 .card-title.display-1 {
-    font-family: 'Roboto Mono', monospace;
     font-size: 50px;
 }
 
