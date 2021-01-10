@@ -3,8 +3,17 @@
     {% if bins_list %}
         {% for bin in bins_list %}
             <h2><a href="{% url 'grades-assessment' bin.course.pk bin.pk %}">{{ bin.name }}</a></h2>
+            <p>
+                {% for key, value in bins_dict.items %}
+                    {% if key == bin.pk %}
+                        {{ value }}
+                    {% endif %}
+                {% endfor %}%
+            </p>
         {% endfor %}
     {% endif %}
     <a href="{% url 'grades-new-bin' course_id %}">New Category</a>
-    <a data-confirm="Are you sure?" data-method="delete" href="{% url 'grades-course' course_id%}" rel="nofollow">Delete</a>
+    <form action="{% url 'grades-course' course_id %}" method="delete">
+    <input type="submit" value="Delete">
+    </form>
 {% endblock content %}
