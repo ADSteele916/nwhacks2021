@@ -1,5 +1,6 @@
 {% extends "grades/base.html" %}
 {% block content %}
+    <h1>{{ course_name }} {{ bin_name }}</h1>
     {% if assessments_list %}
         {% for assessment in assessments_list %}
             <div class = "assessment-marks {% cycle 'blue-mark' 'red-mark' 'yellow-mark' %}">
