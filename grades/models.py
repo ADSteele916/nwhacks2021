@@ -1,10 +1,13 @@
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 
+from users.models import Profile
+
 
 class Course(models.Model):
     name = models.CharField(max_length=10)
     credits = models.PositiveSmallIntegerField()
+    user = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.name
