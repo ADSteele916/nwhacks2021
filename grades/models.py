@@ -1,3 +1,5 @@
+from typing import Union
+
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 
@@ -12,13 +14,18 @@ class Course(models.Model):
     def __str__(self):
         return self.name
 
-    def get_grade(self) -> float:
+    def get_grade(self) -> Union[float, str]:
         weights = 0.0
         rsf = 0.0
         for b in self.bin_set.all():
+            if isinstance(b.get_grade, str):
+                continue
             weights += b.weight
             rsf += b.weight * b.get_grade() / 100.0
-        return rsf / weights * 100.0
+        try:
+            return rsf / weights * 100.0
+        except ZeroDivisionError:
+            return "No marks yet"
 
     def delete(self):
         bins_list = Bin.objects.filter(course__pk=self.pk)
@@ -42,7 +49,7 @@ class Bin(models.Model):
     def __str__(self):
         return self.name
 
-    def get_grade(self) -> float:
+    def get_grade(self) -> Union[float, str]:
         weighted_assignments = [(a.weight, a.get_grade() * a.weight) if a.mark is not None else (0.0, 0.0) for a in
                                 self.assessment_set.all()]
         weighted_marks = [wa[1] for wa in weighted_assignments]
@@ -53,9 +60,12 @@ class Bin(models.Model):
             weighted_marks.pop(idx)
             weighted_assignments.pop(idx)
 
+        try:
+            a = sum(list(map(lambda x: x[1], weighted_assignments))) / sum(list(map(lambda x: x[0], weighted_assignments))) * 100.0
+            return
+        except ZeroDivisionError:
+            return "No marks yet"
 
-        return sum(list(map(lambda x: x[1], weighted_assignments))) / sum(
-            list(map(lambda x: x[0], weighted_assignments))) * 100.0
 
 
 class Assessment(models.Model):
