@@ -102,7 +102,7 @@
 .red-card {
     position: relative;
     padding: 20px;
-    width: 100%;
+    width: 90%;
     height: auto;
     display: inline-block;
     background-color: #f76c6c;
@@ -113,7 +113,7 @@
 .blue-card {
     position: relative;
     padding: 20px;
-    width: 100%;
+    width: 90%;
     height: auto;
     display: inline-block;
     background-color: #a8d0e6;
@@ -124,7 +124,7 @@
 .yellow-card {
     position: relative;
     padding: 20px;
-    width: 100%;
+    width: 90%;
     height: auto;
     display: inline-block;
     background-color: #f8e9a1;
