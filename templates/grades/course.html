@@ -7,6 +7,6 @@
             </div>
         {% endfor %}
     {% endif %}
-    <a href="{% url 'grades-new-bin' course_id %}">New Category</a>
-    <a data-confirm="Are you sure?" data-method="delete" href="{% url 'grades-course' course_id%}" rel="nofollow">Delete</a>
+    <a class = "new-category" href="{% url 'grades-new-bin' course_id %}">New Category</a>
+    <a class = "new-category" data-confirm="Are you sure?" data-method="delete" href="{% url 'grades-course' course_id%}" rel="nofollow">Delete</a>
 {% endblock content %}

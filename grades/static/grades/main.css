@@ -110,6 +110,7 @@
     width: 100%;
     padding-top: 100%;
     position: relative;
+    border-width: 0px;
 }
 
 .courses-title {
@@ -298,6 +299,14 @@ a:hover {
     font-size: 35px;
 }
 
+.new-assessment {
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Roboto Mono', monospace;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
 /* Course */
 .course-assessments{
     text-align: left;
@@ -307,4 +316,12 @@ a:hover {
     padding-bottom: 20px;
     width: 60%;
     margin: auto;
+}
+
+.new-category {
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Roboto Mono', monospace;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
