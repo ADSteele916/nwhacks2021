@@ -86,6 +86,18 @@
     grid-template-columns: 33% 33% 33%;
 }
 
+@media(max-width: 800px) {
+    .courses {
+        grid-template-columns: 50% 50%;
+    }
+}
+
+@media(max-width: 400px) {
+    .courses {
+        grid-template-columns: 100%;
+    }
+}
+
 .red-card {
     background-color: #f76c6c;
 }
@@ -99,13 +111,16 @@
 }
 
 .card-body {
-    height: 0;
-    width: 100%;
-    padding-top: 100%;
     position: relative;
-    border-width: 0px;
+    margin: 20px;
+    display: inline-block;
     color: white;
-    margin: 10px;
+}
+
+.sq-setter-w {
+    width: 100%;
+    height: auto;
+    visibility: hidden;
 }
 
 .card-body a {
