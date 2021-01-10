@@ -104,6 +104,7 @@
     position: relative;
     padding: 20px;
     margin: 20px auto 20px;
+    width: 90%;
     height: auto;
     display: inline-block;
     background-color: #f76c6c;
@@ -115,6 +116,7 @@
     position: relative;
     padding: 20px;
     margin: 20px auto 20px;
+    width: 90%;
     height: auto;
     display: inline-block;
     background-color: #a8d0e6;
@@ -126,6 +128,7 @@
     position: relative;
     padding: 20px;
     margin: 20px auto 20px;
+    width: 90%;
     height: auto;
     display: inline-block;
     background-color: #f8e9a1;
