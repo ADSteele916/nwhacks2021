@@ -1,0 +1,8 @@
+{% extends "grades/base.html" %}
+{% block content %}
+{% if bins_list %}
+    {% for bin in bins_list %}
+        <p>{{ bin.name }}</p>
+    {% endfor %}
+    {% endif %}
+{% endblock content %}

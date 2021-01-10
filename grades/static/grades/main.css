@@ -60,24 +60,3 @@
     font-weight: 400;
 }
 
-.red-card {
-    background-color: #f76c6c;
-    color: white;
-}
-
-.blue-card {
-    background-color: #a8d0e6;
-    color: white;
-}
-.yellow-card {
-    background-color: #f8e9a1;
-    color: white;
-}
-
-.card a {
-    text-decoration: none;
-}
-
-.container-fluid {
-    width: 80%;
-}
