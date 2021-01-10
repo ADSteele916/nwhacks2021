@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-from .models import Course, Bin
+from .models import Course, Bin, Assessment
 
 def home(request):
     return render(request, "grades/home.html")
@@ -30,3 +30,10 @@ def course(request, course_id):
     }
     return HttpResponse(template.render(context, request))
 
+def assessment(request, course_id, bin_id):
+    assessments_list = Assessment.objects.filter(bin__pk=bin_id)
+    template = loader.get_template("grades/assessment.html")
+    context = {
+        'assessments_list': assessments_list,
+    }
+    return HttpResponse(template.render(context, request))

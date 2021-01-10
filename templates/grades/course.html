@@ -2,8 +2,7 @@
 {% block content %}
 {% if bins_list %}
     {% for bin in bins_list %}
-        <p>{{ bin.name }}</p>
-        <p>{{ bin.course.id }}</p>
+        <h2><a href="{% url 'grades-assessment' bin.course.id bin.pk %}">{{ bin.name }}</a></h2>
     {% endfor %}
     {% endif %}
 {% endblock content %}
