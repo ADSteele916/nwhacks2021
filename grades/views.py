@@ -1,5 +1,7 @@
 from django.shortcuts import render
-
+from django.http import HttpResponse
+from django.template import loader
+from .models import Course
 
 def home(request):
     return render(request, "grades/home.html")
@@ -13,4 +15,10 @@ def about(request):
     return render(request, "grades/about.html", {"title": "About"})
 
 def courses(request):
-    return render(request, "grades/courses.html", {"title": "Courses"})
+    courses_list = Course.objects.order_by('-name')
+    template = loader.get_template("grades/courses.html")
+    context = {
+        'courses_list': courses_list,
+    }
+    return HttpResponse(template.render(context, request))
+

@@ -43,11 +43,10 @@
         </div>
     </div>
 <div class = "courses-taken">
-        {% if courses|length > 0 %}
-            <legend class="border-bottom mb-4">Currently Monitoring:</legend>
+        {% if courses_list %}
             <ul>
-                {% for course in courses %}
-                    <li>{{ course }}</li>
+                {% for course in courses_list %}
+                    <li>{{ course.name }}</li>
                 {% endfor %}
             </ul>
         {% endif %}
