@@ -30,7 +30,7 @@ def courses(request):
 
 @login_required
 def course(request, course_id):
-    bins_list = Bin.objects.get(course__pk=course_id)
+    bins_list = Bin.objects.filter(course__pk=course_id)
     template = loader.get_template("grades/course.html")
     context = {
         'bins_list': bins_list,
@@ -40,7 +40,7 @@ def course(request, course_id):
 
 @login_required
 def assessment(request, course_id, bin_id):
-    assessments_list = Assessment.objects.get(bin__pk=bin_id)
+    assessments_list = Assessment.objects.filter(bin__pk=bin_id)
     template = loader.get_template("grades/assessment.html")
     context = {
         'assessments_list': assessments_list,
