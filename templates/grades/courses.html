@@ -42,4 +42,14 @@
             </div>
         </div>
     </div>
+<div class = "courses-taken">
+        {% if courses|length > 0 %}
+            <legend class="border-bottom mb-4">Currently Monitoring:</legend>
+            <ul>
+                {% for course in courses %}
+                    <li>{{ course }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
 {% endblock content %}

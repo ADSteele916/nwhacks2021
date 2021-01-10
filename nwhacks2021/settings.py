@@ -131,7 +131,7 @@ USE_TZ = True
 if (os.environ.get("DJANGO_DEBUG_VALUE") != "True") and (
     os.environ.get("DJANGO_DEBUG_VALUE") is not None
 ):
-    STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+    STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = "courses-home"
