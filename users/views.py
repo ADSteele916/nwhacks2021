@@ -67,10 +67,10 @@ def register(request):
             )
             login(request, new_user)
 
-            message = "Your account is now good to go! Now click on 'Courses' to start adding sections to monitor."
+            message = "Your account is now good to go!"
             messages.success(request, message)
 
-            return redirect("courses-home")
+            return redirect("grades-home")
     else:
         form = UserRegisterForm()
     return render(request, "users/register.html", {"form": form})
