@@ -3,13 +3,18 @@
     <div class="page-title">{{ course_name }} - {{ bin_name }}</div>
     {% if assessments_list %}
         {% for assessment in assessments_list %}
-            <div class = "assessment-marks {% cycle 'blue-mark' 'red-mark' 'yellow-mark' %}">
+            <div class="assessment-marks {% cycle 'blue-mark' 'red-mark' 'yellow-mark' %}">
                 <div class="assessment-name">{{ assessment.name }}</div>
                 <div class="assessment-mark">{{ assessment.mark }} / {{ assessment.total }}</div>
             </div>
         {% endfor %}
     {% endif %}
-    <div class ="extrawrapper1 text-center">
-        <a class = "new-assessment" href="{% url 'grades-new-assessment' course_id bin_id %}">New Assessment</a>
+    <div class="extrawrapper1 text-center">
+        <a class="new-assessment" href="{% url 'grades-new-assessment' course_id bin_id %}">New Assessment</a>
+        <form action="{% url 'grades-assessment' course_id bin_id %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="Delete">
+        </form>
     </div>
 {% endblock content %}
