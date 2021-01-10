@@ -55,7 +55,7 @@ def newCourse(request):
 
         if form.is_valid():
             new_Course = form.save(commit=False)
-            new_Course.user = request.user
+            new_Course.user.user = request.user
             new_Course.save()
             return HttpResponseRedirect("/courses/")
     else:
