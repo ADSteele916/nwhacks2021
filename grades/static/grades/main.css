@@ -149,6 +149,7 @@
 }
 
 .card-text {
+    text-decoration: none;
     position: absolute;
     z-index: 1;
     right: 20px;
@@ -158,6 +159,7 @@
 }
 
 .card-title.display-1 {
+    text-decoration: none;
     position: absolute;
     z-index: 1;
     top: 20px;
