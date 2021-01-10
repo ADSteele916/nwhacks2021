@@ -80,7 +80,7 @@ def newBin(request, course_id):
                                          drop_n_lowest=form.instance.drop_n_lowest,
                                          course=Course.objects.get(pk=course_id))
             new_bin.save()
-            return HttpResponseRedirect("/courses/" + course_id)
+            return HttpResponseRedirect("/course/" + str(course_id))
     else:
         form = Binform()
 
