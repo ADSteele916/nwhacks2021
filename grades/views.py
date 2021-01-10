@@ -11,3 +11,6 @@ def faq(request):
 
 def about(request):
     return render(request, "grades/about.html", {"title": "About"})
+
+def courses(request):
+    return render(request, "grades/courses.html", {"title": "Courses"})
