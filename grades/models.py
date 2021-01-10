@@ -18,10 +18,11 @@ class Course(models.Model):
         weights = 0.0
         rsf = 0.0
         for b in self.bin_set.all():
-            if isinstance(b.get_grade, str):
+            if b.get_grade == "No marks yet":
                 continue
-            weights += b.weight
-            rsf += b.weight * b.get_grade() / 100.0
+            else:
+                weights += b.weight
+                rsf += b.weight * b.get_grade() / 100.0
         try:
             return round(rsf / weights * 100.0, 2)
         except ZeroDivisionError:
