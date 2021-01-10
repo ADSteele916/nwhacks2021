@@ -6,4 +6,5 @@
             <p>{{ assessment.mark }}</p>
         {% endfor %}
     {% endif %}
+    <a href="{% url 'grades-new-assessment' course_id bin_id %}">New Assessment</a>
 {% endblock content %}

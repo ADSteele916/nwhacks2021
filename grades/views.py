@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from .models import Course, Bin, Assessment
-from .forms import Courseform, Binform
+from .forms import Courseform, Binform, Assessmentform
 
 
 
@@ -46,6 +46,8 @@ def assessment(request, course_id, bin_id):
     template = loader.get_template("grades/assessment.html")
     context = {
         'assessments_list': assessments_list,
+        'course_id': course_id,
+        'bin_id': bin_id
     }
     return HttpResponse(template.render(context, request))
 
@@ -85,3 +87,20 @@ def newBin(request, course_id):
         form = Binform()
 
     return render(request, "grades/newbin.html", {'form': form, 'course_id': course_id})
+
+@login_required
+def newAssessment(request, course_id, bin_id):
+    if request.method == 'POST':
+        form = Assessmentform(request.POST)
+        if form.is_valid():
+            new_assessment = Assessment.objects.create(name=form.instance.name,
+                                         weight=form.instance.weight,
+                                         total=form.instance.total,
+                                         mark=form.instance.mark,
+                                         bin=Bin.objects.get(pk=bin_id))
+            new_assessment.save()
+            return HttpResponseRedirect("/course/" + str(course_id) + "/" + str(bin_id))
+    else:
+        form = Assessmentform()
+
+    return render(request, "grades/newassessment.html", {'form': form, 'course_id': course_id, 'bin_id':bin_id})
