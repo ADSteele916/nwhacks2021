@@ -303,8 +303,7 @@ a:hover {
     text-align: center;
     font-size: 25px;
     font-family: 'Roboto Mono', monospace;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    margin: 20px auto;
 }
 
 /* Course */
@@ -322,6 +321,5 @@ a:hover {
     text-align: center;
     font-size: 25px;
     font-family: 'Roboto Mono', monospace;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    margin: 20px auto;
 }
