@@ -31,6 +31,10 @@ def courses(request):
 
 @login_required
 def course(request, course_id):
+    if request.method == 'DELETE':
+        Course.objects.get(pk=course_id).delete()
+        return HttpResponseRedirect("/courses/")
+
     bins_list = Bin.objects.filter(course__pk=course_id)
     template = loader.get_template("grades/course.html")
     context = {
