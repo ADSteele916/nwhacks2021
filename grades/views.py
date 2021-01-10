@@ -23,7 +23,7 @@ def courses(request):
     return HttpResponse(template.render(context, request))
 
 def course(request, course_id):
-    bins_list = Bin.objects.order_by('-name')
+    bins_list = Bin.objects.filter(course__pk=course_id)
     template = loader.get_template("grades/course.html")
     context = {
         'bins_list': bins_list,
