@@ -2,7 +2,9 @@
 {% block content %}
     {% if bins_list %}
         {% for bin in bins_list %}
-            <h2><a href="{% url 'grades-assessment' bin.course.pk bin.pk %}">{{ bin.name }}</a></h2>
+            <div class = "course-assessments {% cycle 'blue-mark' 'red-mark' 'yellow-mark' %}">
+                <h2 class="course-name"><a href="{% url 'grades-assessment' bin.course.pk bin.pk %}">{{ bin.name }}</a></h2>
+            </div>
         {% endfor %}
     {% endif %}
     <a href="{% url 'grades-new-bin' course_id %}">New Category</a>

@@ -265,8 +265,8 @@ a:hover {
     padding-top: 10px;
     padding-bottom: 10px;
     display: grid;
-    grid-template-columns: 80% 20%
-    width: 60%
+    grid-template-columns: 80% 20%;
+    width: 60%;
 }
 
 .red-mark {
@@ -283,8 +283,20 @@ a:hover {
 
 .assessment-mark {
     text-align: right;
+    font-size: 25px;
 }
 
 .assessment-name {
     text-align: left;
+    font-size: 35px;
+}
+
+/* Course */
+.course-assessments{
+    text-align: left;
+    font-size: 35px;
+    font-family: 'Roboto Mono', monospace;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 60%;
 }
