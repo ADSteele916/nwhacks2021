@@ -1,3 +1,4 @@
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 
 
@@ -16,4 +17,5 @@ class Bin(models.Model):
 class Assessment(models.Model):
     name = models.CharField(max_length=20)
     weight = models.PositiveSmallIntegerField()
+    mark = models.PositiveSmallIntegerField(validators=[MaxValueValidator(100), MinValueValidator(0)], null=True)
     bin = models.ForeignKey(Bin, on_delete=models.CASCADE)
