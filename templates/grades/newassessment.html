@@ -5,7 +5,7 @@
     <div class="page-title">add a new assessment</div>
           <form action="{% url 'grades-new-assessment' course_id bin_id %}" method="post" >
           {% csrf_token %}
-                <div class="login-fields text-center">
+                <div class="login-fields">
                     {{ form|crispy }}
                 </div>
 
