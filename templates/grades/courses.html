@@ -6,7 +6,7 @@
             {% for course in courses_list %}
                 <div class="col-md-4 col-lg-4 col-sm-12 d-flex align-items-stretch">
                     <div class="card">
-                        <a href="base.html">
+                        <a href="{url 'grades-course' course__pk}">
                             <div class="card-body {% cycle 'blue-card' 'red-card' 'yellow-card' %}">
                                 <h2 class="card-title display-1"><strong>{{ course.name }}</strong></h2>
                                 <p class="card-text">
