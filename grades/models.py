@@ -51,10 +51,8 @@ class Bin(models.Model):
             weighted_marks.pop(idx)
             weighted_assignments.pop(idx)
 
-
         return sum(list(map(lambda x: x[1], weighted_assignments))) / sum(
             list(map(lambda x: x[0], weighted_assignments))) * 100.0
-
 
 class Assessment(models.Model):
     name = models.CharField(max_length=20)
