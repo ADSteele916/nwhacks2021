@@ -16,7 +16,7 @@
         {% endfor %}
     {% endif %}
     <div class="extrawrapper1 text-center">
-        <a class="new-category" href="{% url 'grades-new-bin' course_id %}">New Category</a>
+        <a class="new-category delete-button" href="{% url 'grades-new-bin' course_id %}">New Category</a>
     </div>
     <div class="extrawrapper text-center">
         <form action="{% url 'grades-course' course_id %}" method="post" >
