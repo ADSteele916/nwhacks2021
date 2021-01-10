@@ -327,6 +327,7 @@ a:hover {
     font-family: 'Roboto Mono', monospace;
     padding-top: 20px;
     margin: 20px auto;
+    text-decoration: none;
 }
 
 /* Course */
@@ -356,6 +357,7 @@ a:hover {
     font-size: 25px;
     font-family: 'Roboto Mono', monospace;
     margin: 20px auto;
+    text-decoration: none;
 }
 
 .extrawrapper1 {
