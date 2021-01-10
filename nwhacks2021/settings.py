@@ -134,7 +134,7 @@ if (os.environ.get("DJANGO_DEBUG_VALUE") != "True") and (
     STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL = "courses-home"
+LOGIN_REDIRECT_URL = "grades-home"
 LOGIN_URL = "login"
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
