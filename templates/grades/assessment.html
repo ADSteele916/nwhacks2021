@@ -13,7 +13,7 @@
         <a class="new-assessment" href="{% url 'grades-new-assessment' course_id bin_id %}">New Assessment</a>
     </div>
     <div class="extrawrapper text-center">
-        <form class="delete-button" action="{% url 'grades-assessment' course_id bin_id %}" method="post">
+        <form action="{% url 'grades-assessment' course_id bin_id %}" method="post">
             {% csrf_token %}
             <input type="hidden" name="_method" value="delete">
             <input class="delete-button" type="submit" value="Delete">
