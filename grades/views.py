@@ -75,8 +75,10 @@ def newBin(request, course_id):
     if request.method == 'POST':
         form = Binform(request.POST)
         if form.is_valid():
-            new_bin = form.save(commit=False)
-            new_bin.course = Course.objects.get(course_id)
+            new_bin = Bin.objects.create(name=form.instance.name,
+                                         weight=form.instance.weight,
+                                         drop_n_lowest=form.instance.drop_n_lowest,
+                                         course=Course.objects.get(pk=course_id))
             new_bin.save()
             return HttpResponseRedirect("/courses/" + course_id)
     else:
