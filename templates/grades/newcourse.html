@@ -9,12 +9,9 @@
             {{ form }}
         </div>
 
-      </form>
-
         <div class="text-center">
-            <small class="login-bottom-txt">
-                <a href="{% url 'password_reset' %}">Forgot Password?</a>
-                <p>Need an account? <a href="{% url "register" %}">Sign Up</a></p>
-            </small>
+            <button class="btn btn-outline-info login-btn" type="submit">Log In</button>
         </div>
+
+      </form>
 {% endblock content %}
