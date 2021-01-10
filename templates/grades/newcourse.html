@@ -5,12 +5,12 @@
         <form action="{% url 'grades-new-course' %}" method="post" >
         {% csrf_token %}
 
-        <div class="login-fields">
-            {{ form }}
-        </div>
+            <div class="login-fields text-center">
+                {{ form }}
+            </div>
 
         <div class="text-center">
-            <button class="btn btn-outline-info login-btn" type="submit">Log In</button>
+            <button class="btn btn-outline-info login-btn" type="submit">Add new course</button>
         </div>
 
       </form>

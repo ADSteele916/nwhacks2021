@@ -1,8 +1,17 @@
 {% extends "grades/base.html" %}
 {% block content %}
+    <div class="page-title">add a new category</div>
+
       <form action="{% url 'grades-new-bin' course_id %}" method="post" >
       {% csrf_token %}
-      {{ form }}
-      <input type="submit" value="Submit">
+
+            <div class="login-fields text-center">
+                {{ form }}
+            </div>
+
+        <div class="text-center">
+            <button class="btn btn-outline-info login-btn" type="submit">Submit</button>
+        </div>
+
       </form>
 {% endblock content %}

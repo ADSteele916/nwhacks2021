@@ -1,8 +1,15 @@
 {% extends "grades/base.html" %}
 {% block content %}
-      <form action="{% url 'grades-new-assessment' course_id bin_id %}" method="post" >
-      {% csrf_token %}
-      {{ form }}
-      <input type="submit" value="Submit">
-      </form>
+    <div class="page-title">add a new assessment</div>
+          <form action="{% url 'grades-new-assessment' course_id bin_id %}" method="post" >
+          {% csrf_token %}
+                <div class="login-fields text-center">
+                    {{ form }}
+                </div>
+
+                <div class="text-center">
+                    <button class="btn btn-outline-info login-btn" type="submit">Submit</button>
+                </div>
+
+          </form>
 {% endblock content %}
