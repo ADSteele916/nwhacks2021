@@ -85,7 +85,7 @@
     display: grid;
     grid-template-columns: 33% 33% 33%;
     margin: auto;
-    grid-gap: 40px;
+    justify-items: center;
 }
 
 @media(max-width: 800px) {
