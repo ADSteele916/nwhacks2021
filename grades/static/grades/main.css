@@ -81,12 +81,9 @@
 
 /* courses */
 
-
-
 .courses {
     display: grid;
     grid-template-columns: 33% 33% 33%;
-    width: 80%;
     margin: auto;
 }
 
@@ -140,14 +137,22 @@
 }
 
 .card-text {
+    position: absolute;
     z-index: 1;
-    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     text-align: right;
 }
 
 .card-title.display-1 {
+    position: absolute;
     z-index: 1;
-    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     font-size: 50px;
 }
 
