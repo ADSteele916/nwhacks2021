@@ -40,6 +40,8 @@ class Bin(models.Model):
                                 self.assessment_set.all()]
         weighted_marks = [wa[1] for wa in weighted_assignments]
         for i in range(self.drop_n_lowest):
+            if len(weighted_marks) == 0:
+                break
             idx = weighted_marks.index(min(weighted_marks))
             weighted_marks.pop(idx)
             weighted_assignments.pop(idx)
