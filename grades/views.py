@@ -21,9 +21,13 @@ def about(request):
 @login_required
 def courses(request):
     courses_list = Course.objects.filter(user__user=request.user)
+    courses_dict = {}
+    for course in courses_list:
+        courses_dict[course.pk] = course.get_grade()
     template = loader.get_template("grades/courses.html")
     context = {
         'courses_list': courses_list,
+        'courses_dict': courses_dict,
     }
     return HttpResponse(template.render(context, request))
 
@@ -35,11 +39,15 @@ def course(request, course_id):
         return HttpResponseRedirect("/courses/")
 
     bins_list = Bin.objects.filter(course__pk=course_id)
+    bins_dict = {}
+    for bin in bins_list:
+        bins_dict[bin.pk] = bin.get_grade()
     template = loader.get_template("grades/course.html")
     context = {
         'bins_list': bins_list,
         'course_id': course_id,
         'course_name': Course.objects.get(pk=course_id).name,
+        'bins_dict': bins_dict
     }
     return HttpResponse(template.render(context, request))
 
@@ -47,6 +55,9 @@ def course(request, course_id):
 @login_required
 def assessment(request, course_id, bin_id):
     assessments_list = Assessment.objects.filter(bin__pk=bin_id)
+    assessments_dict = {}
+    for assessment in assessments_list:
+        assessments_dict[assessment.pk] = assessment.get_grade()
     template = loader.get_template("grades/assessment.html")
     context = {
         'assessments_list': assessments_list,
@@ -54,6 +65,7 @@ def assessment(request, course_id, bin_id):
         'bin_id': bin_id,
         'bin_name': Bin.objects.get(pk=bin_id).name,
         'course_name': Course.objects.get(pk=course_id).name,
+        'assessments_dict': assessments_dict
     }
     return HttpResponse(template.render(context, request))
 
