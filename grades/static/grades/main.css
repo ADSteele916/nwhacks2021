@@ -1,3 +1,12 @@
+/* Multiple */
+.page-title {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 50px;
+    font-weight: 600;
+    text-align: center;
+    padding: 25px;
+}
+
 /* nav bar */
 
 .navbar {
@@ -101,15 +110,21 @@
     margin-top: 25px;
 }
 
+.card-text {
+    text-align: right;
+}
+
+.card-title display-1 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 50px;
+}
+
+
 /* faq */
 
 .faq-header {
     padding: 25px;
     padding-bottom: 0px;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 50px;
-    font-weight: 600;
-    text-align: center;
 }
 
 .card {
@@ -120,12 +135,17 @@
     font-family: 'Roboto Mono', monospace;
     font-size: 20px;
     border-color: #A8D0E6;
+    border-width: 3px;
 }
 
 .card-header {
     background-color: white;
     border-color: #A8D0E6;
-    color: #374785;
+    border-width: 3px;
+}
+
+.collapsed.card-link {
+    text-decoration: none;
 }
 
 /* about */
@@ -181,4 +201,54 @@
     border-color: #A8D0E6;
     border-width: 10px;
     border-style: solid;
+}
+
+/* Login / Logout */
+.login-fields {
+    font-family: 'Roboto Mono', monospace;
+    width: 65%;
+    margin: auto;
+}
+
+
+.login-again a {
+    font-family: 'Roboto Mono', monospace;
+    text-align: center;
+    size: 17px;
+}
+
+.login-btn {
+    margin-top: 25px;
+    text-align: center;
+    padding-left: 50px;
+    padding-right:50px;
+    font-family: 'Roboto Mono', monospace;
+    border-color: #A8D0E6;
+    border-width: 3px;
+    color: #A8D0E6;
+    margin-bottom: 10px;
+}
+
+.login-btn:hover {
+    border-color: #A8D0E6;
+    background-color: #A8D0E6;
+    border-width: 3px;
+    color: #F76C6C;
+}
+
+.login-btn:active {
+    border-color: #F76C6C;
+    background-color: #A8D0E6;
+    color: #F76C6C;
+}
+
+.login-btn:focus {
+    border-color: #F76C6C;
+    background-color: #A8D0E6;
+    color: #F76C6C;
+}
+
+.login-bottom-txt {
+    font-family: 'Roboto Mono', monospace;
+    margin-top: 10px;
 }
